@@ -19,4 +19,4 @@ const counterReducer = (state = { counter:0 }, action) => {
 const store = createStore(counterReducer);
 // console.log(store.getState());
 
-export default store
+export default store;
