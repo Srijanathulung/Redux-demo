@@ -21,3 +21,9 @@
   margin: 2rem 0;
   font-weight: bold;
 }
+.counter button {
+  margin: 1rem;
+  background-color: navy;
+  color: white;
+  padding: 0.5rem;
+}
