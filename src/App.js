@@ -1,14 +1,16 @@
 import './App.css';
-// import Header from './components/Header';
+import Header from './components/Header';
 import Counter from './components/Counter';
+import { Fragment } from 'react';
+import Auth from './components/Auth';
 
 function App() {
   return (
-    <div className="App">
-     <Counter/>
-      {/* <Header/> */}
-
-    </div>
+      <Fragment>
+      <Header />
+      <Auth/>
+        <Counter/>
+      </Fragment>
   );
 }
 
