@@ -4,8 +4,8 @@ import { counterActions } from '../store';
 
 const Counter = () => {
     const dispatch = useDispatch();
-    const counter = useSelector(state => state.counter);
-    const show=useSelector(state=>state.showCounter);
+    const counter = useSelector(state => state.counter.counter);//first counter denotes reducer counter of file index.js and secoind counter denotes initialCounterState's counter whose value is 0 if (initialCounterState ko 'counter' ko place ma name 'value' vako vaye it would be [state.counter.value])
+    const show=useSelector(state=>state.counter.showCounter);
 
     const increaseHandler = () => {
         dispatch(counterActions.increase(5));
