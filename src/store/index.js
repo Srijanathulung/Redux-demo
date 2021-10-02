@@ -14,7 +14,7 @@ const counterSlice=createSlice({
             state.counter--
         },
         increase(state, action) {
-            state.counter = state.counter + action.amount;
+            state.counter = state.counter + action.payload;
          },
         toggleCounter(state) {
             state.showCounter = !state.showCounter;
@@ -24,44 +24,48 @@ const counterSlice=createSlice({
 
 });
 
-const counterReducer = (state = initialState, action) => {
-    if (action.type === 'increase') {
-        return {
-            counter: state.counter + action.amount,
-            showCounter: state.showCounter
+// const counterReducer = (state = initialState, action) => {
+//     if (action.type === 'increase') {
+//         return {
+//             counter: state.counter + action.amount,
+//             showCounter: state.showCounter
 
-        }
-    }
-    if (action.type === 'increment')
-    {
-        return {
-            counter: state.counter + 1,
-            showCounter: state.showCounter
-        }
-    }
-    if (action.type === 'decrement')
-    {
-        return {
-            counter: state.counter - 1,
-            showCounter: state.showCounter
+//         }
+//     }
+//     if (action.type === 'increment')
+//     {
+//         return {
+//             counter: state.counter + 1,
+//             showCounter: state.showCounter
+//         }
+//     }
+//     if (action.type === 'decrement')
+//     {
+//         return {
+//             counter: state.counter - 1,
+//             showCounter: state.showCounter
 
-        }
-    }
-    if (action.type === 'toggle')
-    {
-        return {
-            // counter: state.counter - 1,
-            showCounter: !state.showCounter,
-            counter: state.counter
+//         }
+//     }
+//     if (action.type === 'toggle')
+//     {
+//         return {
+//             // counter: state.counter - 1,
+//             showCounter: !state.showCounter,
+//             counter: state.counter
 
-        }
-    }
-    return state;
-};
+//         }
+//     }
+//     return state;
+// };
 
 const store = configureStore({
     reducer:counterSlice.reducer
 });
+
+export const counterActions = counterSlice.actions;
+
+
 // console.log(store.getState());
 
 export default store;
